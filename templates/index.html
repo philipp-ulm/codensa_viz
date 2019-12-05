@@ -1,0 +1,330 @@
+id="alertasid="consumo<!DOCTYPE html>
+<html lang="en">
+<title>Enel Condensa</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+  body {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .scroll {
+    position: relative;
+    width: 28px;
+    height: 24px;
+  }
+
+  .chevron {
+    position: absolute;
+    width: 28px;
+    height: 8px;
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+    animation: move 3s ease-out infinite;
+  }
+
+  .chevron:first-child {
+    animation: move 3s ease-out 1s infinite;
+  }
+
+  .chevron:nth-child(2) {
+    animation: move 3s ease-out 2s infinite;
+  }
+
+  .chevron:before,
+  .chevron:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 51%;
+    background: #ccc;
+  }
+
+  .chevron:before {
+    left: 0;
+    transform: skew(0deg, 30deg);
+  }
+
+  .chevron:after {
+    right: 0;
+    width: 50%;
+    transform: skew(0deg, -30deg);
+  }
+
+  @keyframes move {
+    25% {
+      opacity: 1;
+
+    }
+    33% {
+      opacity: 1;
+      transform: translateY(30px);
+    }
+    67% {
+      opacity: 1;
+      transform: translateY(40px);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(55px) scale3d(0.5, 0.5, 0.5);
+    }
+  }
+
+  .text {
+    margin-top: 50px;
+    margin-left: -4px;
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 12px;
+    color: #777;
+    text-transform: uppercase;
+    white-space: nowrap;
+    opacity: .25;
+    animation: pulse 2s linear alternate infinite;
+  }
+
+  @keyframes pulse {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .column {
+    float: center;
+    width: 20px;
+  }
+
+  .row::after {
+    display: table;
+  }
+
+  /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+  .footer:link, .footer:visited {
+    font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+    font-size: 16px;
+    background-color: darkgrey;
+    color: white;
+    padding: 0px 25px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .footer:hover, .footer:active {
+    background-color: #333;
+  }
+}
+
+</style>
+<body>
+
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-dark-grey w3-card">
+      <a href="#" class="w3-bar-item w3-button w3-padding-large">INICIO</a>
+      <a href="#consumo" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-red">CONSUMO</a>
+      <a href="#alertas" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-pink">ALERTAS</a>
+      <a href="#infografia" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-blue">INFOGRAFIA</a>
+      <a href="#contacto" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-green">CONTACTO</a>
+      <a href="javascript:void(0)" class="w3-padding-large w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+    <!-- Image -->
+    <div class="w3-display-container w3-center w3-center w3-padding-64">
+      <img src="https://user-images.githubusercontent.com/54328064/69755947-62f76a80-1127-11ea-9b15-16fb3f053cd9.jpg" style="width:100%">
+    </div>
+
+    <div class="w3-container w3-content w3-center w3-padding-16" style="max-width:800px">
+      <h2 class="w3-wide w3-text-grey">SU CENTRO DE CONTROL</h2>
+    </div>
+
+    <div class="w3-padding-32" align="center">
+      <div class="scroll">
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <span class="text">Sigue</span>
+      </div>
+    </div>
+
+    <!-- Consumo -->
+    <div class="w3-container w3-content w3-center w3-padding-32" style="max-width:800px" id="consumo">
+      <h2 class="w3-wide w3-text-red">CONSUMO</h2>
+      <p class="w3-opacity"><i>El Costo de su Consumo de Energía</i></p>
+      <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+        ex ea commodo consequat.</p>
+      </div>
+
+      <!-- Rounded switch -->
+      <div class="row w3-center">
+        <span class="column w3-opacity" style="vertical-align: middle;">Costo</span>
+        <label class="column switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+        <span class="column w3-opacity" style="vertical-align: middle;">Consumo</span>
+      </div>
+
+      <div align="center">
+        <div class="chart1"></div>
+      </div>
+
+
+      <!-- Alertas -->
+      <div class="w3-container w3-content w3-center w3-padding-32" style="max-width:800px" id="alertas">
+        <h2 class="w3-wide w3-text-pink">ALERTAS</h2>
+        <p class="w3-opacity"><i>Visualizacion generando alertas</i></p>
+        <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+          ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <!-- Infografia -->
+        <div class="w3-container w3-content w3-center w3-padding-32" style="max-width:800px" id="infografia">
+          <h2 class="w3-wide w3-text-blue">INFOGRAFIA</h2>
+          <p class="w3-opacity"><i>Infografia explicando consumo</i></p>
+          <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+
+          <!-- The Contact Section -->
+          <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contacto">
+            <h2 class="w3-wide w3-center w3-text-green">CONTACTO</h2>
+            <p class="w3-opacity w3-center"><i>Preguntas? Avísanos!</i></p>
+            <div class="w3-row w3-padding-32">
+              <div class="w3-col m6 w3-large w3-margin-bottom">
+                <i class="fa fa-map-marker" style="width:30px"></i> Bogota D.C., Colombia<br>
+                <i class="fa fa-phone" style="width:30px"></i> Phone: +57 1234 56789<br>
+                <i class="fa fa-envelope" style="width:30px"> </i> Email: mail@mail.com<br>
+              </div>
+              <div class="w3-col m6">
+                <form action="/action_page.php" target="_blank">
+                  <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                    <div class="w3-half">
+                      <input class="w3-input w3-border" type="text" placeholder="Nombre" required name="Name">
+                    </div>
+                    <div class="w3-half">
+                      <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                    </div>
+                  </div>
+                  <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="Message">
+                  <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- End Page Content -->
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+          <a class="footer w3-hover-opacity" href="https://www.enel.com.co/es.html">Enel - Codensa</a>
+          <a class="footer w3-hover-opacity" href="https://uniandes.edu.co/">Universidad de los Andes</a>
+          <a class="footer w3-hover-opacity" href="https://johnguerra.co/">Prof. Guerra Gomez</a>
+        </footer>
+
+        <script>
+
+          // When the user clicks anywhere outside of the modal, close it
+          var modal = document.getElementById('ticketModal');
+          window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.7.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.10"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@5.1.3"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@0.1.0"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.8.1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.12"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.1.0"></script>
+        <script src="static/js/tarea3.js"></script>
+        <script src="static/js/tarea2.js"></script>
+        <script src="static/js/tarea1.js"></script>
+        <script src="static/js/main.js"></script>
+
+      </body>
+      </html>

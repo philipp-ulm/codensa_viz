@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+
+  <style>
+  * {box-sizing: border-box}
+
+  /* Set height of body and the document to 100% */
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+  }
+
+  /* Style tab links */
+  .tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+  }
+
+  .tablink:hover {
+    background-color: #888;
+  }
+
+  /* Style the tab content (and add height:100% for full page content) */
+  .tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+  }
+  #Home {background-color: #FFF;}
+  #T1 {background-color: #FFF ;}
+  #T2 {background-color: #FFF;}
+  #T3 {background-color: #FFF;}
+  /*
+  #Home {background-color: #1F618D;}
+  #T1 {background-color: #2471A3 ;}
+  #T2 {background-color: #2980B9;}
+  #T3 {background-color: #5499C7;}
+  */
+  </style>
+
+  <meta charset="utf-8">
+  <title>Condensa Viz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <button class="tablink" onclick="openPage('Home', this, '#FFF')" id="defaultOpen">Home</button>
+  <button class="tablink" onclick="openPage('T1', this, '#FFF')">Consumo</button>
+  <button class="tablink" onclick="openPage('T2', this, '#FFF')">Alertas</button>
+  <button class="tablink" onclick="openPage('T3', this, '#FFF')">Infografia</button>
+
+  <div id="Home" class="tabcontent">
+    <h3>Home</h3>
+    <p>Home is where the heart is..</p>
+  </div>
+
+  <div id="T1" class="tabcontent">
+    <h3>News</h3>
+    <p>Some news this fine day!</p>
+    <div class="chart1"></div>
+  </div>
+
+  <div id="T2" class="tabcontent">
+    <h3>Contact</h3>
+    <p>Get in touch, or swing by for a cup of coffee.</p>
+    <div class="chart2"></div>
+  </div>
+
+  <div id="T3" class="tabcontent">
+    <h3>About</h3>
+    <p>Who we are and what we do.</p>
+    <div class="chart3"></div>
+  </div>
+
+  <script>
+  function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.7.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.10"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@5.1.3"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@0.1.0"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.8.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.0.0-beta.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.1.0"></script>
+  <script src="static/js/tarea3.js"></script>
+  <script src="static/js/tarea2.js"></script>
+  <script src="static/js/tarea1.js"></script>
+  <script src="static/js/main.js"></script>
+</body>
+</html>
