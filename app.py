@@ -1,12 +1,17 @@
-from flask import Flask, escape, request, make_response, render_template
+from flask import Flask, escape, request, make_response, render_template,  jsonify
 import io
 import csv
 import sqlite3
+import json
 
 app = Flask(__name__)
 
 @app.route('/')
 def home():
+    return render_template('login.html')
+
+@app.route('/index')
+def index():
     return render_template('index.html')
 
 if __name__ == "__main__":
@@ -15,7 +20,7 @@ if __name__ == "__main__":
 @app.route('/data')
 def hello():
     # conn = sqlite3.connect('main.db')
-    conn = sqlite3.connect('C3.db')
+    conn = sqlite3.connect('C1.db')
     # conn = sqlite3.connect('C2.db')
     # conn = sqlite3.connect('C3.db')
     cursor = conn.cursor()
@@ -32,17 +37,26 @@ def hello():
     return output
 
 @app.route('/eleDom')
-def hello2():
+def getElectrodomesticos():
     conn2 = sqlite3.connect('eleDom.db')
+    conn2.row_factory = sqlite3.Row
     cursor2 = conn2.cursor()
-    csvList2 = list(cursor2.execute("select * from eleDom"))
+    results = cursor2.execute("select * from eleDom where estrato = '3' ")
 
-    si2 = io.StringIO()
-    cw2 = csv.writer(si2)
-    cw2.writerows([("estrato_tarifa", "estrato", "electrodomestico", "consumo_kwH", "valor_kwH", "valorConsumo_Hora")] + csvList2)
 
-    output2 = make_response(si2.getvalue())
-    output2.headers["Content-Disposition"] = "attachment; filename=export.csv"
-    output2.headers["Content-type"] = "text/csv"
+    electrodomesticos = list()
+    for r in results:
+        print(type(r), " ", r)
+        row = dict(r)
+        #row["valorConsumo_Hora"] = float(row["consumo_kwH"]) * float(row["valor_kwH"]);
+        electrodomesticos.append(row)
 
-    return output2
+    #si2 = io.StringIO()
+    #cw2 = csv.writer(si2)
+    #cw2.writerows([("electrodomestico", "consumo_kwH", "valor_kwH")] + csvList2)
+
+    #output2 = make_response(si2.getvalue())
+    #output2.headers["Content-Disposition"] = "attachment; filename=export.csv"
+    #output2.headers["Content-type"] = "text/csv"
+
+    return jsonify(electrodomesticos)
