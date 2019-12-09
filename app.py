@@ -14,14 +14,16 @@ if __name__ == "__main__":
 
 @app.route('/data')
 def hello():
-    conn = sqlite3.connect('main.db')
+    # conn = sqlite3.connect('main.db')
+    conn = sqlite3.connect('C3.db')
+    # conn = sqlite3.connect('C2.db')
+    # conn = sqlite3.connect('C3.db')
     cursor = conn.cursor()
     csvList = list(cursor.execute("select * from consumo"))
 
     si = io.StringIO()
     cw = csv.writer(si)
-    # cw.writerows([("Fecha", "Hora", "Consumo")] + csvList)
-    cw.writerows([("CLIENTE", "Fecha", "Consumo", "Costo")] + csvList)
+    cw.writerows([("", "CLIENTE", "Fecha", "Consumo", "Periodo", "Clase", "Estrato", "Tipo Conex", "Localidad Lec", "Tarifa", "Sector", "Vigencia", "TARIFA_Subsidiada", "TARIFA_Plena", "TARIFA_TOTAL", "Fecha_Formatted", "Costo")] + csvList)
 
     output = make_response(si.getvalue())
     output.headers["Content-Disposition"] = "attachment; filename=export.csv"
