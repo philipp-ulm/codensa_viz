@@ -20,9 +20,9 @@ if __name__ == "__main__":
 @app.route('/data')
 def hello():
     # conn = sqlite3.connect('main.db')
-    conn = sqlite3.connect('C1.db')
+    # conn = sqlite3.connect('C1.db')
     # conn = sqlite3.connect('C2.db')
-    # conn = sqlite3.connect('C3.db')
+    conn = sqlite3.connect('C3.db')
     cursor = conn.cursor()
     csvList = list(cursor.execute("select * from consumo"))
 
