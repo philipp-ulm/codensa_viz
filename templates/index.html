@@ -6,6 +6,12 @@ id="alertasid="consumo<!DOCTYPE html>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+		 rel="stylesheet"
+		 href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+		 crossorigin="anonymous"
+	 />
 <style>
 
   body {
@@ -13,6 +19,15 @@ id="alertasid="consumo<!DOCTYPE html>
     align-items: center;
     width: 100%;
     height: 100%;
+  }
+
+  .body2 {
+		font: 10px sans-serif;
+		width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+		padding: 20px;
   }
 
   .scroll {
@@ -183,6 +198,55 @@ input:checked + .slider:before {
   .footer:hover, .footer:active {
     background-color: #333;
   }
+
+  .axis path,
+	.axis line {
+	  fill: none;
+	  stroke: #000;
+	  shape-rendering: crispEdges;
+	}
+
+	.bar {
+	  fill: orange;
+	}
+
+	.bar:hover {
+	  fill: orangered ;
+	}
+
+	.x.axis path {
+	  display: none;
+	}
+
+	.d3-tip {
+	  line-height: 1;
+	  font-weight: bold;
+	  padding: 12px;
+	  background: rgba(0, 0, 0, 0.8);
+	  color: #fff;
+	  border-radius: 2px;
+	}
+
+	/* Creates a small triangle extender for the tooltip */
+	.d3-tip:after {
+	  box-sizing: border-box;
+	  display: inline;
+	  font-size: 10px;
+	  width: 100%;
+	  line-height: 1;
+	  color: rgba(0, 0, 0, 0.8);
+	  content: "\25BC";
+	  position: absolute;
+	  text-align: center;
+	}
+
+	/* Style northward tooltips differently */
+	.d3-tip.n:after {
+	  margin: -1px 0 0 0;
+	  top: 100%;
+	  left: 0;
+	}
+
 }
 
 </style>
@@ -193,8 +257,8 @@ input:checked + .slider:before {
     <div class="w3-bar w3-dark-grey w3-card">
       <a href="#" class="w3-bar-item w3-button w3-padding-large">INICIO</a>
       <a href="#consumo" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-red">CONSUMO</a>
-      <a href="#alertas" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-pink">ALERTAS</a>
-      <a href="#infografia" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-blue">INFOGRAFIA</a>
+      <!-- <a href="#alertas" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-pink">ALERTAS</a> -->
+      <a href="#infografia" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-blue">ENTENDER CONSUMO</a>
       <a href="#contacto" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-hover-green">CONTACTO</a>
       <a href="javascript:void(0)" class="w3-padding-large w3-hide-small w3-right"><i class="fa fa-search"></i></a>
     </div>
@@ -222,7 +286,7 @@ input:checked + .slider:before {
     </div>
 
     <!-- Consumo -->
-    <div class="w3-container w3-content w3-center w3-padding-32" style="max-width:800px" id="consumo">
+    <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="consumo">
       <h2 class="w3-wide w3-text-red">CONSUMO</h2>
       <p class="w3-opacity"><i>El Costo de su Consumo de Energía</i></p>
       <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -245,21 +309,164 @@ input:checked + .slider:before {
 
 
       <!-- Alertas -->
-      <div class="w3-container w3-content w3-center w3-padding-32" style="max-width:800px" id="alertas">
+      <!-- <div class="w3-container w3-content w3-center w3-padding-32" style="max-width:800px" id="alertas">
         <h2 class="w3-wide w3-text-pink">ALERTAS</h2>
         <p class="w3-opacity"><i>Visualizacion generando alertas</i></p>
         <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
           ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
           adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
+        </div> -->
 
         <!-- Infografia -->
-        <div class="w3-container w3-content w3-center w3-padding-32" style="max-width:800px" id="infografia">
-          <h2 class="w3-wide w3-text-blue">INFOGRAFIA</h2>
-          <p class="w3-opacity"><i>Infografia explicando consumo</i></p>
-          <p class="w3-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="infografia">
+          <h2 class="w3-wide w3-text-blue">PEDAGOGÍA DEL CONSUMO</h2>
+          <p class="w3-opacity"><i>¿Cuáles electrodomésticos le generan mayor costo según su uso?</i></p>
+          <p class="w3-justify">Con ayuda de esta visualización usted podrá conocer el costo aproximado del uso de los principales electrodomésticos de su hogar, según el tiempo que los utilice. Con esta información usted y miembros de su hogar o comercio podrán planear un consumo más responsable de energía.</p>
+          </div>
+
+          <div class="body2">
+
+            <div class="row">
+              <div class="col-auto">
+                <div class="row align-items-center"><div class="col-auto"><h6>Eletrodomésticos más comunes</h6><br></div></div>
+
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../static/media/bombillo.png" alt="Smiley face" height="50" width="50">
+                    <label for="slBombillo" id="lblBombillo" style="width:110px">Bombillo(0.100 kw)</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="range" style="width:100px" id="slBombillo" value=1 min=0 max=24 oninput="document.getElementById('lblHBombillo').textContent =this.value"></input>
+                  </div>
+                  <div class="col-auto">
+                    <label for="slBombillo" id="lblHBombillo">1</label> h
+                  </div>
+                </div>
+
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../static/media/televisor.png" alt="Smiley face" height="50" width="50">
+                    <label for="slTelevisor" id="lblTelevisor" style="width:110px">Televisor(0.150 kw)</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="range" style="width:100px" id="slTelevisor" value=1 min=0 max=24 oninput="document.getElementById('lblHTelevisor').textContent =this.value"></input>
+                  </div>
+                  <div class="col-auto">
+                    <label for="slTelevisor" id="lblHTelevisor">1</label> h
+                  </div>
+                </div>
+
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../static/media/nevera.png" alt="Smiley face" height="50" width="50">
+                    <label for="slNevera" id="lblNevera" style="width:110px">Refrigerador(0.575 kw)</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="range" style="width:100px" id="slNevera" value=1 min=0  max=24 oninput="document.getElementById('lblHNevera').textContent =this.value"></input>
+                  </div>
+                  <div class="col-auto">
+                    <label for="slNevera" id="lblHNevera">1</label> h
+                  </div>
+                </div>
+
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../static/media/lavadora.png" alt="Smiley face" height="50" width="50">
+                    <label for="slLavadora" id="lblLavadora" style="width:110px">Lavadora(0.375 kw)</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="range" style="width:100px" id="slLavadora" value=1 min=0 max=24 oninput="document.getElementById('lblHLavadora').textContent =this.value"></input>
+
+                  </div>
+                  <div class="col-auto">
+                    <label for="slLavadora" id="lblHLavadora">1</label> h
+                  </div>
+                </div>
+
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../static/media/plancha.png" alt="Smiley face" height="50" width="50">
+                    <label for="slPlancha" id="lblPlancha" style="width:110px">Plancha(1.200 kw)</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="range" style="width:100px" id="slPlancha" value=1 min=0 max=24 oninput="document.getElementById('lblHPlancha').textContent =this.value"></input>
+                  </div>
+                  <div class="col-auto">
+                    <label for="slPlancha" id="lblHPlancha">1</label> h
+                  </div>
+                </div>
+
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../static/media/computador.png" alt="Smiley face" height="50" width="50">
+                    <label for="slComputador" id="lblComputador" style="width:110px">Computador(0.150 kw)</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="range" style="width:100px" id="slComputador" value=1 min=0 max=24 oninput="document.getElementById('lblHComputador').textContent =this.value"></input>
+                  </div>
+                  <div class="col-auto">
+                    <label for="slComputador" id="lblHComputador">1</label> h
+                  </div>
+                </div>
+
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../static/media/ducha_electrica.png" alt="Smiley face" height="50" width="50">
+                    <label for="slDucha" id="lblDucha" style="width:110px">Ducha eléctrica(1.500 kw)</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="range" style="width:100px" id="slDucha" value=1 min=0 max=24 oninput="document.getElementById('lblHDucha').textContent =this.value"></input>
+                  </div>
+                  <div class="col-auto">
+                    <label for="slDucha" id="lblHDucha">1</label> h
+                  </div>
+                </div>
+
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../static/media/aire_acondicionado.png" alt="Smiley face" height="50" width="50">
+                    <label for="slAireAcond" id="lblAireAcond" style="width:110px">Aire acondicionado(2.950 kw)</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="range" style="width:100px" id="slAireAcond" value=1 min=0 max=24 oninput="document.getElementById('lblHAireAcond').textContent =this.value"></input>
+                  </div>
+                  <div class="col-auto">
+                    <label for="slAireAcond" id="lblHAireAcond">1</label> h
+                  </div>
+                </div>
+
+
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../static/media/aspiradora.png" alt="Smiley face" height="50" width="50">
+                    <label for="slAspiradora" id="lblAspiradora" style="width:110px">Aspiradora(1.200 kw)</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="range" style="width:100px" id="slAspiradora" value=1 min=0 max=24 oninput="document.getElementById('lblHAspiradora').textContent =this.value"></input>
+                  </div>
+                  <div class="col-auto">
+                    <label for="slAspiradora" id="lblHAspiradora">1</label> h
+                  </div>
+                </div>
+
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img src="../static/media/cargador_celular.png" alt="Smiley face" height="50" width="50">
+                    <label for="slCargador" id="lblCargador" style="width:110px">Cargador celular(0.013 kw)</label>
+                  </div>
+                  <div class="col-auto">
+                    <input type="range" style="width:100px" id="slCargador" value=1 min=0 max=24 oninput="document.getElementById('lblHCargador').textContent =this.value"></input>
+                  </div>
+                  <div class="col-auto">
+                    <label for="slCargador" id="lblHCargador">1</label> h
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-auto" id="chart">
+
+              </div>
+            </div>
           </div>
 
           <!-- The Contact Section -->
@@ -283,7 +490,7 @@ input:checked + .slider:before {
                     </div>
                   </div>
                   <input class="w3-input w3-border" type="text" placeholder="Mensaje" required name="Message">
-                  <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+                  <button class="w3-button w3-green w3-section w3-right" type="submit">SEND</button>
                 </form>
               </div>
             </div>
@@ -316,6 +523,7 @@ input:checked + .slider:before {
         <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@0.1.0"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js" integrity="sha256-ogObh+UTVtdRC6Axr1eizQIhPsrWtCCZAWgaonfB2/g=" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega@5.8.1"></script>
