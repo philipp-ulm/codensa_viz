@@ -26,16 +26,15 @@ function tarea1(data) {
 
   function getColor(display) {
     if(display == 0){
-      // return '#EC7063';
-      return '#E74C3C';
+      return '#EC7063';
+      // return '#E74C3C';
     } else if (display == 1) {
-      // return '#EC7063';
-      return '#E74C3C';
+      return '#EC7063';
+      // return '#E74C3C';
     }
   }
 
-  // ratings scatter plot
-  const base = vl.markLine()
+  const base = vl.markArea()
     .data(data)
     .encode(
       vl.x()
@@ -60,8 +59,6 @@ function tarea1(data) {
 
   const numMonths = data.length / 30;
 
-  // dynamic query histogram
-  // const years = vl.markBar({width: (width / numMonths)/1.5})
   const years = vl.markBar({width: (800 / numMonths)/1.5})
     .data(data)
     .select(brush)
