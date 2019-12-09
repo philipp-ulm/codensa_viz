@@ -37,7 +37,7 @@ function tarea1(data) {
     .data(data)
     .encode(
       vl.x()
-        .fieldT('Fecha')
+        .fieldT('Fecha_Formatted')
         .title(null)
         .axis({format: '%a, %d %b %y', labelAngle: 45}),
       vl.y()
@@ -47,10 +47,10 @@ function tarea1(data) {
         .value(getColor(0)),
       vl.opacity()
         .value(0.85),
-      vl.tooltip([vl.timeYMD('Fecha'), vl.text(getData(0)).format(',.2f')])
+      vl.tooltip([vl.timeYMD('Fecha_Formatted'), vl.text(getData(0)).format(',.2f')])
     )
     .transform(
-      vl.filter(click)
+      vl.filter(brush)
     )
     .width(850)
     .height(400);
@@ -62,20 +62,20 @@ function tarea1(data) {
   // const years = vl.markBar({width: (width / numMonths)/1.5})
   const years = vl.markBar({width: (800 / numMonths)/1.5})
     .data(data)
-    .select(click)
+    .select(brush)
     .encode(
       vl.x()
-        .utcYM('Fecha')
+        .utcYM('Fecha_Formatted')
         .title('Date')
         .axis({title: 'Fecha', labelAngle: 45}),
       vl.y()
         .sum(getData(1))
         .title(getLabel(1) + ' por Mes'),
       vl.opacity()
-        .if(click, vl.value(0.85)).value(0.3),
+        .if(brush, vl.value(0.85)).value(0.3),
       vl.color()
         .value(getColor(1)),
-      vl.tooltip([vl.timeYM('Fecha'), vl.text(vl.sum(getData(1))).format(',.0f')])
+      vl.tooltip([vl.timeYM('Fecha_Formatted'), vl.text(vl.sum(getData(1))).format(',.0f')])
     )
     .width(850)
     .height(100);
@@ -87,7 +87,7 @@ function tarea1(data) {
       vl.text().sum(getData(0)).format(',.2f')
     )
     .transform(
-      vl.filter(click)
+      vl.filter(brush)
     )
 
   return vl.vconcat(base, years, totalEnergia).spacing(5).toJSON();
