@@ -26,9 +26,11 @@ function tarea1(data) {
 
   function getColor(display) {
     if(display == 0){
-      return '#EF3939';
+      // return '#EC7063';
+      return '#E74C3C';
     } else if (display == 1) {
-      return '#EF3939';
+      // return '#EC7063';
+      return '#E74C3C';
     }
   }
 
