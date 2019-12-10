@@ -1,6 +1,5 @@
 --- Contenido ---
 * Base Clientes: Clientes.csv
-* Base de consumo de clientes: db_Uniandes.csv
+* Muestra Base de consumo de clientes: muestra.csv
 * Tarifas por clientes: Tarifa.csv
 * Pre-procesamiento en Python: ETL.ipynb
-* Base consolidada para las visualizaciones: Base_final_clientes.csv
