@@ -7,10 +7,6 @@ function update() {
     tarea3(data);
   });
 }
-//
-// d3.csv("/eleDom").then(data => {
-//   console.log("Data loaded", data);
-// });
 
 d3.csv("/data").then(data => {
 

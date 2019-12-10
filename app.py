@@ -45,18 +45,9 @@ def getElectrodomesticos():
     for r in results:
         print(type(r), " ", r)
         row = dict(r)
-        #row["valorConsumo_Hora"] = float(row["consumo_kwH"]) * float(row["valor_kwH"]);
         electrodomesticos.append(row)
 
-    #si2 = io.StringIO()
-    #cw2 = csv.writer(si2)
-    #cw2.writerows([("electrodomestico", "consumo_kwH", "valor_kwH")] + csvList2)
-
-    #output2 = make_response(si2.getvalue())
-    #output2.headers["Content-Disposition"] = "attachment; filename=export.csv"
-    #output2.headers["Content-type"] = "text/csv"
-
     return jsonify(electrodomesticos)
-	
+
 if __name__ == "__main__":
     app.run()

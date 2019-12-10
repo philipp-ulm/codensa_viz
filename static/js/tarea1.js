@@ -6,8 +6,6 @@ function tarea1(data) {
   const brush = vl.selectInterval().encodings('x'); // limit selection to x-axis (year) values
   const click = vl.selectMulti().encodings('x');
 
-  // const displayData = 1;
-
   function getData(display) {
     if(display == 0){
       return 'Consumo';
@@ -27,10 +25,8 @@ function tarea1(data) {
   function getColor(display) {
     if(display == 0){
       return '#EC7063';
-      // return '#E74C3C';
     } else if (display == 1) {
       return '#EC7063';
-      // return '#E74C3C';
     }
   }
 

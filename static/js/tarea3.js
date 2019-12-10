@@ -1,5 +1,7 @@
 /* global d3 */
 
+/*Author: Oscar Acero*/
+
 function getSliderValue(list, eleDom) {
     var value = list.filter(obj => obj.electrodomestico == eleDom);
     return value;
@@ -103,15 +105,7 @@ function tarea3(data) {
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
   svg.call(tip);
-/*
-  gBase.append("text")
-  .attr("class", "tooltip")
-  .attr("x", -100)
-  //.style("fill", "black")
-  //.style("stroke", "black")
-  .text("TOOLTIP")
-  .style("font", "10px times");
-*/
+
   const x = d3.scaleLinear()
   .domain([0, d3.max(data_filtered, d => d.tarifa) ])
   .range([0, iwidth])
@@ -151,14 +145,6 @@ function tarea3(data) {
     d3.select(this)
     .style("fill", "red");
     tip.show;
-/*
-    gBase.select(".tooltip")
-    .attr("x", d3.mouse(this)[0]+30)
-    .attr("y", d3.mouse(this)[1])
-    .text(text)
-    .style("font", "14px times");
-    console.log("mouseover", d3.mouse(this));
-    */
   }
 
 
@@ -166,12 +152,6 @@ function tarea3(data) {
   d3.select(this)
   .style("fill", "#1F90CE");
   tip.hide;
-/*
-  gBase.select(".tooltip")
-  .attr("x", -100)
-  .text("");
-  console.log(d, d3.event);
-  */
   }
 
 
@@ -190,10 +170,6 @@ function tarea3(data) {
   .attr("height", y.bandwidth() )
   .style("opacity", 1.0)
   .style("fill", "#1F90CE");
-//  .text(d => (x(d.tarifa));
-
-  //.on("mouseover", onMouseOver)
-  //.on("mouseout", onMouseOut);
 
 
   var total_tarifa = 0
