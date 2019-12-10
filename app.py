@@ -25,7 +25,7 @@ def hello():
 
     si = io.StringIO()
     cw = csv.writer(si)
-    cw.writerows([("", "CLIENTE", "Fecha", "Consumo", "Periodo", "Clase", "Estrato", "Tipo Conex", "Localidad Lec", "Tarifa", "Sector", "Vigencia", "TARIFA_Subsidiada", "TARIFA_Plena", "TARIFA_TOTAL", "Fecha_Formatted", "Costo")] + csvList)
+    cw.writerows([("", 'Unnamed: 0', "CLIENTE", "Fecha", "Consumo", "Periodo", "Clase", "Estrato", "Tipo Conex", "Localidad Lec", "Tarifa", "Sector", "Vigencia", "TARIFA_Subsidiada", "TARIFA_Plena", "TARIFA_TOTAL", "Fecha_Formatted", "Costo")] + csvList)
 
     output = make_response(si.getvalue())
     output.headers["Content-Disposition"] = "attachment; filename=export.csv"
@@ -38,7 +38,7 @@ def getElectrodomesticos():
     conn2 = sqlite3.connect('eleDom.db')
     conn2.row_factory = sqlite3.Row
     cursor2 = conn2.cursor()
-    results = cursor2.execute("select * from eleDom where estrato = '3' ")
+    results = cursor2.execute("select * from eleDom where estrato = '6' ")
 
 
     electrodomesticos = list()
