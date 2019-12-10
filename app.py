@@ -14,9 +14,6 @@ def home():
 def index():
     return render_template('index.html')
 
-if __name__ == "__main__":
-    app.run()
-
 @app.route('/data')
 def hello():
     # conn = sqlite3.connect('main.db')
@@ -60,3 +57,6 @@ def getElectrodomesticos():
     #output2.headers["Content-type"] = "text/csv"
 
     return jsonify(electrodomesticos)
+	
+if __name__ == "__main__":
+    app.run()
