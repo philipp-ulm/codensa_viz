@@ -22,7 +22,7 @@ jupyterlab==1.0.2
 jupyterlab-server==1.0.0
 pandas==0.24.2
 pandas-profiling==2.3.0
-py==1.8.0
+py==1.10.0
 pycodestyle==2.5.0
 pycosat==0.6.3
 pycparser==2.19
